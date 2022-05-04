@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 export async function getStaticProps(context) {
@@ -25,6 +26,17 @@ export default function Home(props) {
         <div>
             Pókedex - Felipe Assis - NextJS Edition
             <ul>
+                <li>
+                    <Link href="/">
+                        <a>Home</a>
+                    </Link>
+                    
+                </li>
+                <li>
+                    <Link href="/sobre">
+                        <a>Sobre o Projeto</a>
+                    </Link>
+                </li>
                 {pokemons.map((pokemon) => (
                     <li key={pokemon.entry_number}>
                         {pokemon.pokemon_species.name}
