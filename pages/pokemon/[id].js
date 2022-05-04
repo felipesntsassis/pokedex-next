@@ -31,23 +31,21 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
+    const pokemons = await fetch('https://pokeapi.co/api/v2/pokedex/2/')
+        .then(resp => {
+            if (resp.ok) {
+                return resp.json();
+            }
+        })
+        .then(data => {
+            return data.pokemon_entries;
+        });
     return {
-        paths: [
-            {
-                params: {
-                    id: '1',
-                },
-            },
-            {
-                params: {
-                    id: '2',
-                },
-            },{
-                params: {
-                    id: '3',
-                },
-            },
-        ],
+        paths: pokemons.map(pokemon => ({
+            params: {
+                id: pokemon.entry_number.toString()
+            }
+        })),
         fallback: false
     }
 };
