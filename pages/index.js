@@ -23,7 +23,7 @@ export default function Home(props) {
 
     return (
         <div>
-            Pókedex - NextJS Edition!
+            Pókedex - Felipe Assis - NextJS Edition
             <ul>
                 {pokemons.map((pokemon) => (
                     <li key={pokemon.entry_number}>
