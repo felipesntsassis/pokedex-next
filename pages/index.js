@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '../src/components/Link';
 import React from 'react';
 
 export async function getStaticProps(context) {
@@ -28,19 +28,19 @@ export default function Home(props) {
             <ul>
                 <li>
                     <Link href="/">
-                        <a>Home</a>
+                        Home
                     </Link>
                     
                 </li>
                 <li>
                     <Link href="/sobre">
-                        <a>Sobre o Projeto</a>
+                        Sobre o Projeto
                     </Link>
                 </li>
                 {pokemons.map((pokemon) => (
                     <li key={pokemon.entry_number}>
                         <Link href={`pokemon/${pokemon.entry_number}`}>
-                            <a>{pokemon.pokemon_species.name}</a>
+                            {pokemon.pokemon_species.name}
                         </Link>
                     </li>
                 ))}

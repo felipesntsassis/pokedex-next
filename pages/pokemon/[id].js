@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 export default function Pokemon({ pokemon }) {
@@ -5,9 +6,15 @@ export default function Pokemon({ pokemon }) {
 
     return (
         <div>
+            <h1>{pokemon.name}</h1>
             <img src={pokemon.sprites.front_default} alt="Imagem do Pokemon"></img>
+            <nav>
+                <Link href="/"> 
+                    <a>Voltar para listagem completa</a>
+                </Link>
+            </nav>
         </div>
-    );
+    );  
 }
 
 export async function getStaticProps({ params }) {
