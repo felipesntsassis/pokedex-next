@@ -5,7 +5,6 @@ function Sobre() {
     return (
         <div>
             <ul>
-                <li>Página Sobre</li>
                 <li>
                     <Link href="/">
                         <a>Home</a>
